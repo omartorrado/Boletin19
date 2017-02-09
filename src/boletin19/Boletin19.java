@@ -17,11 +17,14 @@ public class Boletin19 {
     public static void main(String[] args) {
         // TODO code application logic here
         Libreria l1=new Libreria();
-        l1.añadirLibro();
-        l1.añadirLibro();
-        l1.Mostrar();
-        l1.vender();
-        l1.Mostrar();
+        l1.libreriaTest();
+        l1.mostrarTodo();
+        //l1.vender("aaa");
+        l1.mostrarTodo();
+        //l1.vender("aaa");
+        l1.darDeBaja();
+        l1.mostrarTodo();
+        l1.mostrar("aaa");
     }
     
 }

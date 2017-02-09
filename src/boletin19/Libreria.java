@@ -35,7 +35,7 @@ public class Libreria {
         }
     }
 
-    public void Mostrar() {
+    public void mostrarTodo() {
         Collections.sort(libreria);
         for (int i = 0; i < libreria.size(); i++) {
             System.out.println(libreria.get(i).toString());
@@ -77,6 +77,48 @@ public class Libreria {
                 }
             }
         }
+    }
+
+    public void darDeBaja() {
+        for (int i = 0; i < libreria.size(); i++) {
+            if (libreria.get(i).getNumUnidades() < 1) {
+                libreria.remove(i);
+            }
+        }
+    }
+
+    public void mostrar(String titulo) {
+        int existe = 0;
+        for (int i = 0; i < libreria.size(); i++) {
+            if (libreria.get(i).getTitulo().equals(titulo)) {
+                System.out.println(libreria.get(i).toString());
+                existe++;
+            }
+        }
+        if (existe == 0) {
+            System.out.println("El libro no esta disponible");
+        } else if (existe > 1) {
+            System.out.println("Hay mas de un libro con ese titulo. Indique el autor");
+            String autor = Pstring("Nombre del autor?");
+            for (int i = 0; i < libreria.size(); i++) {
+                if (libreria.get(i).getAutor().equals(autor)&&libreria.get(i).getTitulo().equals(titulo)) {
+                    System.out.println(libreria.get(i).toString());
+                }
+            }
+        }
+    }
+
+    public void libreriaTest() {
+        Libro l1 = new Libro("aaa", "ab", "l1", 12.50f, 2);
+        Libro l2 = new Libro("aba", "ab", "l2", 10.50f, 3);
+        Libro l3 = new Libro("aaa", "ac", "l3", 9.50f, 2);
+        Libro l4 = new Libro("aza", "ac", "l4", 7.50f, 4);
+        Libro l5 = new Libro("bbb", "ad", "l5", 18.50f, 0);
+        libreria.add(l1);
+        libreria.add(l2);
+        libreria.add(l3);
+        libreria.add(l4);
+        libreria.add(l5);
     }
 
 }
