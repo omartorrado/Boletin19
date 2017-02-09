@@ -44,7 +44,7 @@ public class Libreria {
     }
 
     public void vender(String titulo) {
-        int vendido=0;
+        int vendido = 0;
         for (int i = 0; i < libreria.size(); i++) {
             Libro l = libreria.get(i);
             if ((l.getTitulo().equals(titulo)) && vendido == 0) {
@@ -52,12 +52,12 @@ public class Libreria {
                     int numU = l.getNumUnidades();
                     l.setNumUnidades(numU - 1);
                     libreria.set(i, l);
-                    vendido=1;
+                    vendido = 1;
                     System.out.println("Vendido");
                 } else if (l.getNumUnidades() == 1 && vendido == 0) {
                     libreria.remove(i);
                     System.out.println(libreria.get(i).toString());
-                    vendido=1;
+                    vendido = 1;
                     System.out.println("Vendido el ultimo ejemplar");
                 } else {
                     System.out.println("No quedan ejemplares de este libro");
@@ -78,12 +78,12 @@ public class Libreria {
                     int numU = l.getNumUnidades();
                     l.setNumUnidades(numU - 1);
                     libreria.set(i, l);
-                    vendido=1;
+                    vendido = 1;
                     System.out.println("Vendido");
                 } else if (l.getNumUnidades() == 1 && vendido == 0) {
                     libreria.remove(i);
                     System.out.println(libreria.get(i).toString());
-                    vendido=1;
+                    vendido = 1;
                     System.out.println("Vendido el ultimo ejemplar");
                 } else {
                     System.out.println("No quedan ejemplares de este libro");
@@ -102,6 +102,7 @@ public class Libreria {
 
     public void mostrar(String titulo) {
         int existe = 0;
+        int autorEncontrado = 0;
         for (int i = 0; i < libreria.size(); i++) {
             if (libreria.get(i).getTitulo().equals(titulo)) {
                 System.out.println(libreria.get(i).toString());
@@ -116,7 +117,11 @@ public class Libreria {
             for (int i = 0; i < libreria.size(); i++) {
                 if (libreria.get(i).getAutor().equals(autor) && libreria.get(i).getTitulo().equals(titulo)) {
                     System.out.println(libreria.get(i).toString());
+                    autorEncontrado = 1;
                 }
+            }
+            if (autorEncontrado == 0) {
+                System.out.println("No hay ningun libro de ese autor con ese titulo");
             }
         }
     }

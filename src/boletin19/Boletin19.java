@@ -17,6 +17,7 @@ public class Boletin19 {
     public static void main(String[] args) {
         // TODO code application logic here
         Libreria l1=new Libreria();
+        //Hacer un menu para elegir las opciones
         l1.libreriaTest();
         l1.mostrarTodo();
         l1.vender("aaa");
@@ -26,6 +27,7 @@ public class Boletin19 {
         l1.mostrarTodo();
         //l1.vender("aaa");
         l1.mostrar("aaa");
+        
     }
     
 }
