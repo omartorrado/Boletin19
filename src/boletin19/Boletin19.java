@@ -19,11 +19,12 @@ public class Boletin19 {
         Libreria l1=new Libreria();
         l1.libreriaTest();
         l1.mostrarTodo();
-        //l1.vender("aaa");
+        l1.vender("aaa");
         l1.mostrarTodo();
         //l1.vender("aaa");
         l1.darDeBaja();
         l1.mostrarTodo();
+        //l1.vender("aaa");
         l1.mostrar("aaa");
     }
     
