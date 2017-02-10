@@ -5,7 +5,7 @@
  */
 package boletin19;
 
-import static PedirDatos.PedirDatos.*;
+import static MisFunciones.PedirDatos.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JOptionPane;
